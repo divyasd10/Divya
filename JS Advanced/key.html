@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keys</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Data</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </body>
+  <script>
+    let fruits = ["apple", "banana", "orange", "pear", "grapes"];
+    let tableBody = document
+      .getElementById("table")
+      .getElementsByTagName("tbody")[0];
+
+    for (let i = 0; i < fruits.length; i++) {
+      let trow = document.createElement("tr");
+      let tindex = document.createElement("td");
+      let tfruit = document.createElement("td");
+      let tdel=document.createElement("td")
+      let deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.onclick = function() {
+        trow.remove();
+      };
+      tindex.textContent = i;
+      tfruit.textContent = fruits[i];
+      trow.append(tindex);
+      trow.append(tfruit);
+      trow.append(tdel)
+      tdel.append(deleteButton);
+      tableBody.append(trow);
+    }
+  </script>
+</html> -->
+
+ <!-- show the values in table using foreach -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keys</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Data</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </body>
+  <script>
+    let fruits = ["apple", "banana", "orange", "pear", "grapes"];
+    let tableBody = document.getElementById("tbody");
+
+    fruits.forEach((fruit, index) => {
+      let trow = document.createElement("tr");
+      let tindex = document.createElement("td");
+      let tfruit = document.createElement("td");
+      let tdel = document.createElement("td");
+      let deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.onclick = () => {
+        trow.remove();
+      };
+      tindex.textContent = index;
+      tfruit.textContent = fruit;
+      trow.append(tindex);
+      trow.append(tfruit);
+      trow.append(tdel);
+      tdel.append(deleteButton);
+      tableBody.append(trow);
+    });
+  </script>
+</html>
+```
